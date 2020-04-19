@@ -10,9 +10,16 @@ export class ChatbotsListingComponent implements OnInit {
 
   chatbots = chatbots;
   chatbotsAllItens = Object.assign([], this.chatbots);
+
   chatbotsFavorities = [];
   chatbotsFavoritiesAllItens = Object.assign([], this.chatbotsFavorities);
-  chatbotSearch;
+
+  chatbotSearch = '';
+
+  ORGANIZE_BOCKS = 'BOCKS';
+  ORGANIZE_LIST = 'LIST';
+
+  selectedOrganization = this.ORGANIZE_BOCKS;
 
   constructor() { }
 
@@ -87,6 +94,14 @@ export class ChatbotsListingComponent implements OnInit {
   orderChatbotsByCreation() {
     this.sortListByCreation(this.chatbots);
     this.sortListByCreation(this.chatbotsFavorities);
+  }
+
+  selectBlocksOrganization() {
+    this.selectedOrganization = this.ORGANIZE_BOCKS;
+  }
+
+  selectListOrganization() {
+    this.selectedOrganization = this.ORGANIZE_LIST;
   }
 
 }

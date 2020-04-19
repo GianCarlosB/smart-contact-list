@@ -4,8 +4,35 @@
   margin-left: 10px;
 }
 
-.image-rounded  {
+.image-rounded-medium  {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+}
+
+.image-rounded-small  {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.frame-fav-list {
+  height: 110px;
+  width: 50px;
+  position: relative;
+}
+
+.fav-image-list  {
+  width: 40px;
+  height: 40px;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

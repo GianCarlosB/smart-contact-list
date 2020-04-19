@@ -1,7 +1,7 @@
 <section class="section">
   <div class="columns">
     <div class="column is-two-fifths">
-      <h1 class="title">
+      <h1 class="title is-1">
         <strong>My chatbots</strong>
       </h1>
     </div>
@@ -18,8 +18,8 @@
                   <button class="button is-link second-button-orderby" (click)="orderChatbotsByCreation()">Order by creation</button>
               </div>
               <div class="column">
-                <img class="is-pulled-right pointer" src="assets/images/organize-list.png" />
-                <img class="is-pulled-right pointer" src="assets/images/organize-blocks.png" />
+                <img class="is-pulled-right pointer {{selectedOrganization === ORGANIZE_LIST ? 'custom-divider' : ''}}" src="assets/images/organize-list.png" (click)="selectListOrganization()" />
+                <img class="is-pulled-right pointer {{selectedOrganization === ORGANIZE_BOCKS ? 'custom-divider' : ''}}" src="assets/images/organize-blocks.png" (click)="selectBlocksOrganization()" />
               </div>
             </div>
           </div>
@@ -29,56 +29,112 @@
   </div>
 </section>
 <section class="section" *ngIf="chatbotsFavorities.length > 0">
-  <h1 class="title has-text-info">
+  <h1 class="title is-2 has-text-info">
     <strong>Favorities</strong>
   </h1>
-  <div class="columns is-multiline">
+  <div class="columns is-multiline" *ngIf="selectedOrganization === ORGANIZE_BOCKS">
     <div class="column is-2" *ngFor="let chatbot of chatbotsFavorities">
-      <img class="pointer" src="assets/images/star.png" (click)="removeChatbotOnFavorities(chatbot)" />
-      <article class="media">
-        <div class="media-left">
+      <div class="card">
+        <div class="card-content">
+          <img class="pointer" src="assets/images/star.png" (click)="removeChatbotOnFavorities(chatbot)" />
+          <article class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-content">
+              <div class="is-flex has-content-centered">
+                <img class="image-rounded-medium" src="{{chatbot.image}}" />
+              </div>
+              <div class="content has-text-centered">
+                <p>
+                  <br/>
+                    <strong class="title is-4">{{chatbot.name}}</strong>
+                  <br/>
+                  <small>{{chatbot.shortName}}</small>
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="media-content">
-          <div class="is-flex has-content-centered">
-            <img class="image-rounded" src="{{chatbot.image}}" />
-          </div>
-          <div class="content has-text-centered">
-            <p>
-              <strong>{{chatbot.name}}</strong>
-              <br>
-              <small>{{chatbot.shortName}}</small>
-              <br/>
-              <small>{{chatbot.created}}</small>
-            </p>
-          </div>
-        </div>
-      </article>
+      </div>
     </div>
   </div>
-  <div class="custom-divider" *ngIf="chatbots.length > 0"></div>
+  <div class="columns is-multiline" *ngIf="selectedOrganization === ORGANIZE_LIST">
+    <div class="column is-12" *ngFor="let chatbot of chatbotsFavorities">
+      <div class="is-flex">
+        <div class="frame-fav-list">
+          <img class="fav-image-list pointer" src="assets/images/star.png" (click)="addChatbotOnFavorities(chatbot)" />
+        </div>
+        <div class="card column">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <img class="image-rounded-small" src="{{chatbot.image}}" />
+              </div>
+              <div class="media-content">
+                <p>
+                  <strong class="title is-3 is-size-4-mobile">{{chatbot.name}}</strong>
+                  <small class="is-pulled-right">Created at {{chatbot.created | date: 'dd/MM/yyyy'}}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" *ngIf="chatbotsFavorities.length > 0 && chatbots.length > 0">
+  <div class="custom-divider"></div>
 </section>
 <section class="section" *ngIf="chatbots.length > 0">
-  <div class="columns is-multiline">
-    <div class=" column is-2" *ngFor="let chatbot of chatbots">
-      <img class="pointer" src="assets/images/favorite.png" (click)="addChatbotOnFavorities(chatbot)" />
-      <article class="media">
-        <div class="media-left">
+  <div class="columns is-multiline" *ngIf="selectedOrganization === ORGANIZE_BOCKS">
+    <div class="column is-2" *ngFor="let chatbot of chatbots">
+      <div class="card">
+        <div class="card-content">
+          <img class="pointer" src="assets/images/favorite.png" (click)="addChatbotOnFavorities(chatbot)" />
+          <article class="media">
+            <div class="media-left">
+            </div>
+            <div class="media-content">
+              <div class="is-flex has-content-centered">
+                <img class="image-rounded-medium" src="{{chatbot.image}}" />
+              </div>
+              <div class="content has-text-centered">
+                <p>
+                  <br/>
+                    <strong class="title is-4">{{chatbot.name}}</strong>
+                  <br/>
+                  <small>{{chatbot.shortName}}</small>
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="media-content">
-          <div class="is-flex has-content-centered">
-            <img class="image-rounded" src="{{chatbot.image}}" />
-          </div>
-          <div class="content has-text-centered">
-            <p>
-              <strong>{{chatbot.name}}</strong>
-              <br>
-              <small>{{chatbot.shortName}}</small>
-              <br/>
-              <small>{{chatbot.created}}</small>
-            </p>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-multiline" *ngIf="selectedOrganization === ORGANIZE_LIST">
+    <div class="column is-12" *ngFor="let chatbot of chatbots">
+      <div class="is-flex">
+        <div class="frame-fav-list">
+          <img class="fav-image-list pointer" src="assets/images/favorite.png" (click)="addChatbotOnFavorities(chatbot)" />
+        </div>
+        <div class="card column">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <img class="image-rounded-small" src="{{chatbot.image}}" />
+              </div>
+              <div class="media-content">
+                <p>
+                  <strong class="title is-3 is-size-4-mobile">{{chatbot.name}}</strong>
+                  <small class="is-pulled-right">Created at {{chatbot.created | date: 'dd/MM/yyyy'}}</small>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </div>
 </section>
