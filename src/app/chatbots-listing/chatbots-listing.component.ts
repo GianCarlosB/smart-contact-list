@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageMap } from '@ngx-pwa/local-storage';
 import chatbots from '../../resources/data.json';
 
 @Component({
@@ -19,12 +20,22 @@ export class ChatbotsListingComponent implements OnInit {
   ORGANIZE_BOCKS = 'BOCKS';
   ORGANIZE_LIST = 'LIST';
 
-  selectedOrganization = this.ORGANIZE_BOCKS;
+  selectedOrganization = '';
 
-  constructor() { }
+  constructor(private storage: StorageMap) { 
+    this.storage.get('selectedOrganization').subscribe((selectedOrganization) => {
+      this.selectedOrganization = (selectedOrganization ? selectedOrganization.toString() : this.ORGANIZE_BOCKS);
+    });
+    for (let chatbot of this.chatbots) {
+      this.storage.get(chatbot.shortName).subscribe((shortName) => {
+        if (shortName) {
+          this.addChatbotOnFavorities(chatbot);
+        }
+      });
+    }
+  }
 
   ngOnInit(): void {
-    console.log(chatbots);
   }
 
   updateListsAllItens() {
@@ -37,6 +48,7 @@ export class ChatbotsListingComponent implements OnInit {
       return c.name !== chatbot.name && c.shortName && chatbot.name;
     });
     this.chatbotsFavorities.push(chatbot);
+    this.storage.set(chatbot.shortName, chatbot.shortName).subscribe(() => {});
     this.updateListsAllItens();
   }
 
@@ -45,11 +57,12 @@ export class ChatbotsListingComponent implements OnInit {
       return c.name !== chatbot.name && c.shortName && chatbot.name;
     });
     this.chatbots.push(chatbot);
+    this.storage.delete(chatbot.shortName).subscribe(() => {});
     this.updateListsAllItens();
   }
 
   filterChatbotsByName(chatbotSearch) {
-    if(chatbotSearch) {
+    if (chatbotSearch) {
       this.chatbots = this.chatbotsAllItens.filter(function(c) {
         return c.name.toLowerCase().includes(chatbotSearch.toLowerCase());
       });
@@ -98,10 +111,12 @@ export class ChatbotsListingComponent implements OnInit {
 
   selectBlocksOrganization() {
     this.selectedOrganization = this.ORGANIZE_BOCKS;
+    this.storage.set('selectedOrganization', this.ORGANIZE_BOCKS).subscribe(() => {});
   }
 
   selectListOrganization() {
     this.selectedOrganization = this.ORGANIZE_LIST;
+    this.storage.set('selectedOrganization', this.ORGANIZE_LIST).subscribe(() => {});
   }
 
 }
