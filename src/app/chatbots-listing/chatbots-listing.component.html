@@ -1,4 +1,4 @@
-<button class="has-background-link pointer button-add">
+<button class="pointer button button-custom-background button-add">
   <img src="assets/images/add.png" />
 </button>
 <section class="section">
@@ -17,8 +17,8 @@
           <div class="column">
             <div class="columns">
               <div class="column is-four-fifths">
-                  <button class="button is-link" (click)="orderChatbotsByName()">Order by name</button>
-                  <button class="button is-link second-button-orderby" (click)="orderChatbotsByCreation()">Order by creation</button>
+                  <button class="button button-custom-background" (click)="orderChatbotsByName()">Order by name</button>
+                  <button class="button button-custom-background second-button-orderby" (click)="orderChatbotsByCreation()">Order by creation</button>
               </div>
               <div class="column">
                 <img class="is-pulled-right pointer {{selectedOrganization === ORGANIZE_LIST ? 'custom-divider' : ''}}" src="assets/images/organize-list.png" (click)="selectListOrganization()" />
@@ -40,7 +40,7 @@
       <div class="card">
         <div class="card-content">
           <img class="pointer" src="assets/images/star.png" (click)="removeChatbotOnFavorities(chatbot)" />
-          <article class="media">
+          <article class="media pointer" (click)="goToDetails(chatbot)">
             <div class="media-left">
             </div>
             <div class="media-content">
@@ -67,7 +67,7 @@
         <div class="frame-fav-list">
           <img class="fav-image-list pointer" src="assets/images/star.png" (click)="removeChatbotOnFavorities(chatbot)" />
         </div>
-        <div class="card column">
+        <div class="card column pointer" (click)="goToDetails(chatbot)">
           <div class="card-content">
             <div class="media">
               <div class="media-left">
@@ -95,7 +95,7 @@
       <div class="card">
         <div class="card-content">
           <img class="pointer" src="assets/images/favorite.png" (click)="addChatbotOnFavorities(chatbot)" />
-          <article class="media">
+          <article class="media pointer" (click)="goToDetails(chatbot)">
             <div class="media-left">
             </div>
             <div class="media-content">
@@ -122,7 +122,7 @@
         <div class="frame-fav-list">
           <img class="fav-image-list pointer" src="assets/images/favorite.png" (click)="addChatbotOnFavorities(chatbot)" />
         </div>
-        <div class="card column">
+        <div class="card column pointer" (click)="goToDetails(chatbot)">
           <div class="card-content">
             <div class="media">
               <div class="media-left">

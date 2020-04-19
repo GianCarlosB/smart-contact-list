@@ -1,11 +1,22 @@
+@import '../../assets/scss/variables';
+
+small {
+  color: $custom-divider-color;
+}
+
 .has-content-centered {
   justify-content: center;
 }
 
 .custom-divider {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid $custom-divider-color;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.button-custom-background {
+  background-color: $button-background-color;
+  color: #fff;
 }

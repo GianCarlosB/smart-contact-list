@@ -6,9 +6,6 @@ import { Component } from '@angular/core';
     <!-- Header -->
     <app-header></app-header>
 
-    <!-- Chatbots Listing -->
-    <app-chatbots-listing></app-chatbots-listing>
-
     <!-- Routes -->
     <router-outlet></router-outlet>
 

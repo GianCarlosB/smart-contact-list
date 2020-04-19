@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import chatbots from '../../resources/data.json';
 
@@ -22,7 +23,7 @@ export class ChatbotsListingComponent implements OnInit {
 
   selectedOrganization = '';
 
-  constructor(private storage: StorageMap) { 
+  constructor(private router: Router, private storage: StorageMap) { 
     this.storage.get('selectedOrganization').subscribe((selectedOrganization) => {
       this.selectedOrganization = (selectedOrganization ? selectedOrganization.toString() : this.ORGANIZE_BOCKS);
     });
@@ -117,6 +118,12 @@ export class ChatbotsListingComponent implements OnInit {
   selectListOrganization() {
     this.selectedOrganization = this.ORGANIZE_LIST;
     this.storage.set('selectedOrganization', this.ORGANIZE_LIST).subscribe(() => {});
+  }
+
+  goToDetails(chatbot) {
+    this.router.navigate(['/details', chatbot.shortName], { 
+      state: { chatbot: chatbot }
+    });
   }
 
 }

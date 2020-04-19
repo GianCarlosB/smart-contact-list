@@ -1,0 +1,123 @@
+<section class="section">
+  <div class="column">
+    <div class="media">
+      <div class="media-left">
+        <button class="button button-main-logo-details button-logo-details">
+          <img src="assets/images/blip.png" />
+        </button>
+      </div>
+      <div class="media-content">
+        <p>
+          <strong class="title is-1 is-size-4-mobile">{{chatbot.name}}</strong>
+        </p>
+        <p>
+          <small class="id-chatbot-text-small">Id: {{chatbot.shortName}}</small>
+          <small class="is-pulled-right">Created at {{chatbot.created | date: 'dd/MM/yyyy'}}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="custom-divider"></div>
+</section>
+<section class="section">
+  <div class="columns">
+    <div class="column is-four-fifths">
+      <div class="columns">
+        <div class="column is-one-quarter">
+          <div class="card card-equal-height">
+            <div class="card-content">
+              <p>
+                Region and idiom
+                <br/>
+                <strong>{{chatbot.culture}}</strong>
+              </p>
+              <br/>
+              <p>
+                Timezone
+                <br/>
+                <strong>{{chatbot.created | date: 'z'}}</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card card-equal-height">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <button class="button button-custom-background button-logo-details">
+                    <img src="assets/images/user.png" />
+                  </button>
+                </div>
+                <div class="media-content">
+                  <p>
+                    <strong class="title is-2">{{chatbot.analytics.user.actived}}</strong>
+                  </p>
+                  <p>
+                    <span class="title is-6">Usuários ativos</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-three-fifths">
+          <div class="card card-equal-height">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <button class="button has-background-success button-logo-details">
+                    <img src="assets/images/union.png" />
+                  </button>
+                </div>
+                <div class="media-content">
+                  <p>
+                    <strong class="title is-2">{{chatbot.analytics.message.received}}</strong>
+                  </p>
+                  <p>
+                    <span class="title is-6">Mensagens recebidas</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="card card-equal-height">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <button class="button has-background-info button-logo-details">
+                    <img src="assets/images/sent.png" />
+                  </button>
+                </div>
+                <div class="media-content">
+                  <p>
+                    <strong class="title is-2">{{chatbot.analytics.message.sent}}</strong>
+                  </p>
+                  <p>
+                    <span class="title is-6">Mensagens enviadas</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column has-text-centered">
+      <img src="assets/images/plano.png" />
+      <p>
+        <small>Status account</small>
+      </p>
+      <p>
+        <strong class="title is-2">{{!chatbot.plan || (chatbot.plan && chatbot.plan === STANDARD_PLAN) ? 'Free' : chatbot.plan}}</strong>
+      </p>
+      <br/>
+      <button class="button button-custom-background" *ngIf="!chatbot.plan || (chatbot.plan && chatbot.plan === STANDARD_PLAN)">Update account</button>
+    </div>
+  </div>
+</section>

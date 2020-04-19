@@ -1,1 +1,27 @@
 @import '../../assets/scss/variables';
+
+.id-chatbot-text-small {
+  margin-left: 0.25%;
+}
+
+.button-logo-details {
+  height: 80px;
+  width: 80px;
+  border: 0px;
+  border-radius: 50%;
+}
+
+.button-main-logo-details {
+  background-color: $button-main-logo-details-background-color;
+}
+
+.card-equal-height {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px 0;
+}
+
+.card-equal-height .card-footer {
+  margin-top: auto;
+}
