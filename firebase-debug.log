@@ -1,0 +1,152 @@
+[debug] [2020-04-19T23:20:40.378Z] ----------------------------------------------------------------------
+[debug] [2020-04-19T23:20:40.380Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bytes\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2020-04-19T23:20:40.380Z] CLI Version:   8.1.1
+[debug] [2020-04-19T23:20:40.380Z] Platform:      win32
+[debug] [2020-04-19T23:20:40.381Z] Node Version:  v10.20.1
+[debug] [2020-04-19T23:20:40.381Z] Time:          Sun Apr 19 2020 20:20:40 GMT-0300 (GMT-03:00)
+[debug] [2020-04-19T23:20:40.381Z] ----------------------------------------------------------------------
+[debug] [2020-04-19T23:20:40.381Z] 
+[debug] [2020-04-19T23:20:40.389Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-19T23:20:40.390Z] > authorizing via signed-in user
+[debug] [2020-04-19T23:20:40.391Z] [iam] checking project smart-contact-list for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-19T23:20:40.401Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-04-19T23:20:40.402Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-04-19T23:20:40.618Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:28 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:20:40.626Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/smart-contact-list:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-04-19T23:20:41.790Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=854","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:20:41.806Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/smart-contact-list  
+ 
+[debug] [2020-04-19T23:20:43.043Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'smart-contact-list'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-04-19T23:20:43.061Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-04-19T23:20:44.822Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:32 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[smart-contact-list]: beginning deploy...
+[info] i  hosting[smart-contact-list]: found 22 files in dist/smart-contact-list
+[debug] [2020-04-19T23:20:44.857Z] [hosting] hash cache [ZGlzdFxzbWFydC1jb250YWN0LWxpc3Q] stored for 22 files
+[debug] [2020-04-19T23:20:44.864Z] [hosting][hash queue][FINAL] {"max":9,"min":0,"avg":0.8636363636363636,"active":0,"complete":22,"success":22,"errored":0,"retried":0,"total":22,"elapsed":20}
+[debug] [2020-04-19T23:20:44.865Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions/bda663eefb90a256:populateFiles  
+ <request body omitted>
+[debug] [2020-04-19T23:20:46.363Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:34 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:20:46.367Z] [hosting][populate queue][FINAL] {"max":1511,"min":1511,"avg":1511,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1511}
+[debug] [2020-04-19T23:20:46.368Z] [hosting] uploads queued: 0
+[debug] [2020-04-19T23:20:46.369Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1587338446369}
+[info] +  hosting[smart-contact-list]: file upload complete
+[debug] [2020-04-19T23:20:46.373Z] [hosting] deploy completed after 1543ms
+[debug] [2020-04-19T23:20:46.574Z] [
+  {
+    "config": {
+      "public": "dist/smart-contact-list",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "smart-contact-list"
+    },
+    "site": "smart-contact-list",
+    "version": "sites/smart-contact-list/versions/bda663eefb90a256"
+  }
+]
+[info] i  hosting[smart-contact-list]: finalizing version...
+[debug] [2020-04-19T23:20:46.590Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions/bda663eefb90a256?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-04-19T23:20:47.890Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:20:47.892Z] [hosting] finalized version for smart-contact-list: {"name":"sites/smart-contact-list/versions/bda663eefb90a256","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-04-19T23:20:32.058399Z","createUser":{"email":"GianCarlosF12@gmail.com"},"finalizeTime":"2020-04-19T23:20:35.604485Z","finalizeUser":{"email":"GianCarlosF12@gmail.com"}}
+[info] +  hosting[smart-contact-list]: version finalized
+[info] i  hosting[smart-contact-list]: releasing new version...
+[debug] [2020-04-19T23:20:47.896Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/releases?version_name=sites/smart-contact-list/versions/bda663eefb90a256  
+ {"message":null}
+[debug] [2020-04-19T23:20:48.985Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:20:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:20:48.986Z] [hosting] release: {"name":"sites/smart-contact-list/releases/1587338436700656","version":{"name":"sites/smart-contact-list/versions/bda663eefb90a256","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}},"type":"DEPLOY","releaseTime":"2020-04-19T23:20:36Z"}
+[info] +  hosting[smart-contact-list]: release complete
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/smart-contact-list/overview
+[info] Hosting URL: https://smart-contact-list.web.app
+[debug] [2020-04-19T23:24:46.733Z] ----------------------------------------------------------------------
+[debug] [2020-04-19T23:24:46.735Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Bytes\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2020-04-19T23:24:46.735Z] CLI Version:   8.1.1
+[debug] [2020-04-19T23:24:46.735Z] Platform:      win32
+[debug] [2020-04-19T23:24:46.735Z] Node Version:  v10.20.1
+[debug] [2020-04-19T23:24:46.736Z] Time:          Sun Apr 19 2020 20:24:46 GMT-0300 (GMT-03:00)
+[debug] [2020-04-19T23:24:46.736Z] ----------------------------------------------------------------------
+[debug] [2020-04-19T23:24:46.736Z] 
+[debug] [2020-04-19T23:24:46.743Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-19T23:24:46.745Z] > authorizing via signed-in user
+[debug] [2020-04-19T23:24:46.745Z] [iam] checking project smart-contact-list for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-19T23:24:46.758Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/smart-contact-list:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-04-19T23:24:47.820Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:35 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=876","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:24:47.822Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/smart-contact-list  
+ 
+[debug] [2020-04-19T23:24:49.035Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'smart-contact-list'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-04-19T23:24:49.057Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-04-19T23:24:50.855Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:38 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[smart-contact-list]: beginning deploy...
+[info] i  hosting[smart-contact-list]: found 22 files in dist/smart-contact-list
+[debug] [2020-04-19T23:24:50.918Z] [hosting] hash cache [ZGlzdFxzbWFydC1jb250YWN0LWxpc3Q] stored for 22 files
+[debug] [2020-04-19T23:24:50.919Z] [hosting][hash queue][FINAL] {"max":10,"min":1,"avg":1.8181818181818181,"active":0,"complete":22,"success":22,"errored":0,"retried":0,"total":22,"elapsed":14}
+[debug] [2020-04-19T23:24:50.919Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions/1048cbb158da0cdb:populateFiles  
+ <request body omitted>
+[debug] [2020-04-19T23:24:52.246Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:39 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:24:52.250Z] [hosting][populate queue][FINAL] {"max":1332,"min":1332,"avg":1332,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1333}
+[debug] [2020-04-19T23:24:52.266Z] [hosting] uploads queued: 0
+[debug] [2020-04-19T23:24:52.267Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1587338692267}
+[info] +  hosting[smart-contact-list]: file upload complete
+[debug] [2020-04-19T23:24:52.268Z] [hosting] deploy completed after 1374ms
+[debug] [2020-04-19T23:24:52.454Z] [
+  {
+    "config": {
+      "public": "dist/smart-contact-list",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "smart-contact-list"
+    },
+    "site": "smart-contact-list",
+    "version": "sites/smart-contact-list/versions/1048cbb158da0cdb"
+  }
+]
+[info] i  hosting[smart-contact-list]: finalizing version...
+[debug] [2020-04-19T23:24:52.461Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/versions/1048cbb158da0cdb?updateMask=status  
+ {"status":"FINALIZED"}
+[debug] [2020-04-19T23:24:53.600Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:41 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:24:53.603Z] [hosting] finalized version for smart-contact-list: {"name":"sites/smart-contact-list/versions/1048cbb158da0cdb","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2020-04-19T23:24:38.018159Z","createUser":{"email":"GianCarlosF12@gmail.com"},"finalizeTime":"2020-04-19T23:24:41.293355Z","finalizeUser":{"email":"GianCarlosF12@gmail.com"}}
+[info] +  hosting[smart-contact-list]: version finalized
+[info] i  hosting[smart-contact-list]: releasing new version...
+[debug] [2020-04-19T23:24:53.618Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/smart-contact-list/releases?version_name=sites/smart-contact-list/versions/1048cbb158da0cdb  
+ {"message":null}
+[debug] [2020-04-19T23:24:54.692Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 19 Apr 2020 23:24:42 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-19T23:24:54.695Z] [hosting] release: {"name":"sites/smart-contact-list/releases/1587338682390099","version":{"name":"sites/smart-contact-list/versions/1048cbb158da0cdb","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}},"type":"DEPLOY","releaseTime":"2020-04-19T23:24:42Z"}
+[info] +  hosting[smart-contact-list]: release complete
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/smart-contact-list/overview
+[info] Hosting URL: https://smart-contact-list.web.app
